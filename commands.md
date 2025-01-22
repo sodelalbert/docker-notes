@@ -13,8 +13,6 @@ docker run -d -p 4000:80 --name [container_name] [image_name]
 
 docker rm -f $(docker ps -aq); docker system prune -af --volumes
 
-
-
 # Docker Compose
 
 `--build` is needed if we made changes to underlying `Dockerfile`

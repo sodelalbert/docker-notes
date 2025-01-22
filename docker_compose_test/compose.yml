@@ -1,7 +1,7 @@
 services:
   consumer:
     build:
-      context: ./consumer  # The directory with the Consumer Dockerfile
+      context: ./consumer # The directory with the Consumer Dockerfile
     container_name: consumer
     networks:
       - zmq_network
@@ -13,7 +13,7 @@ services:
 
   provider:
     build:
-      context: ./provider  # The directory with the Provider Dockerfile
+      context: ./provider # The directory with the Provider Dockerfile
     container_name: provider
     networks:
       - zmq_network
@@ -22,7 +22,7 @@ services:
       - ./provider:/app # Shared folder
       - shared_data:/data # Named Volume
     command: sleep infinity
-    
+
     # You could simulate a delay or a failure in provider startup to test the connection behavior
     # Example: adding a start delay to the provider (if needed):
     # entrypoint: ["sh", "-c", "sleep 10 && python3 provider.py"]
