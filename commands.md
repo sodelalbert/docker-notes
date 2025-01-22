@@ -1,4 +1,6 @@
-# Docker
+# Docker Commands
+
+## Docker
 
 docker image list
 docker container list
@@ -9,15 +11,18 @@ docker build -t my-python-app .
 
 docker run -d -p 4000:80 --name [container_name] [image_name]
 
-# Cleanup
+## Cleanup
 
 docker rm -f $(docker ps -aq); docker system prune -af --volumes
 
-# Docker Compose
+## Docker Compose
 
 `--build` is needed if we made changes to underlying `Dockerfile`
 
+```bash
 docker-compose up --build -d
+```
+
 docker-compose down --volumes --remove-orphans
 
 docker ps
@@ -26,14 +31,14 @@ docker exec -it [ID] bash
 docker exec -it provider bash
 docker exec -it consumer bash
 
-# Docker networking debuggingF
+## Docker networking debuggingF
 
 docker run -it --network [ID] nicolaka/netshoot
 dig hostname
 
-# Compose file examples
+## Compose file examples
 
-## Persistency
+### Persistency
 
 Bind mount - share folder between host and container.
 
