@@ -13,9 +13,11 @@ docker run -d -p 4000:80 --name [container_name] [image_name]
 
 docker rm -f $(docker ps -aq); docker system prune -af --volumes
 
-cons
+
 
 # Docker Compose
+
+`--build` is needed if we made changes to underlying `Dockerfile`
 
 docker-compose up --build -d
 docker-compose down --volumes --remove-orphans
